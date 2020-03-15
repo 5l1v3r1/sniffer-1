@@ -1,2 +1,2 @@
 # sniffer
-Simple script on Python3 with sniff trafic
+Simple script on Python3 which sniffs trafic
