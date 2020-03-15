@@ -37,7 +37,6 @@ def animation():
  right=False
  left=True
  count=0
- #bar = progressbar.ProgressBar(maxval=100, widgets=[Fore.RESET+'Capturing packets(Press CNTRL^C to stop):',progressbar.Bar(left=Fore.RED+'[', marker=Fore.GREEN+'#', right=Fore.RED+']'),]).start()
  bar = progressbar.ProgressBar(maxval=100, widgets=['Capturing packets(Press CNTRL^C to stop):', progressbar.Bar(left=Fore.RED+'[', marker=Fore.GREEN+'~', right=Fore.RED+']'+Fore.RESET),progressbar.ReverseBar(left=Fore.RED+'[', marker=Fore.GREEN+'~', right=Fore.RED+']'+Fore.RESET),]).start()
  while True:
   if left == True:
@@ -48,13 +47,9 @@ def animation():
     left=False
     right=True
   if right==True:
-   count-=1
-   bar.update(count)
-   time.sleep(0.03)
-   if count == 0:
-    right=False
-    left=True
- 
+   count=0
+   left=True
+   right=False
 def sniff():
  sniffer.start()
  try:
@@ -62,7 +57,6 @@ def sniff():
  except KeyboardInterrupt:
   bar.finish()
   sniffer.stop()
-  #print(sniffer.results)
   save(sniffer.results)
 def save(data):
  if str(path_to_file) != "None":
