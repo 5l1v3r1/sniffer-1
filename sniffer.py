@@ -63,5 +63,5 @@ def save(data):
   print(Fore.RESET+"\n"+Fore.GREEN+"File was saved in {}".format(path_to_file))
   wrpcap(path_to_file,data)
  else:
-  print(Fore.REEST+"\n"+Fore.GREEN+str(data))
+  print(Fore.REST+"\n"+Fore.GREEN+str(data))
 main()
